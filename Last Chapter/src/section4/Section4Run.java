@@ -13,6 +13,7 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.instance.Resample;
 import afc.utils.Arff;
 import afc.utils.FileSystem;
+import afc.utils.Arff.AFTERUSE;
 
 public class Section4Run {
 	/*
@@ -55,7 +56,7 @@ public class Section4Run {
 			String filename = FileSystem.getNameFromStringLocation(arffFile, false);
 			System.out.println(filename);
 			System.out.println("Reading " + arffFile + "...");
-			Instances originalInstances = Arff.getAsInstances(arffFile, false);
+			Instances originalInstances = Arff.getAsInstances(arffFile, AFTERUSE.DO_NOTHING);
 			System.out.println("Sample Size: " + originalInstances.numInstances());
 			/*
 			 * Repeats

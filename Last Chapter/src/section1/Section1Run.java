@@ -23,6 +23,7 @@ import afc.graphing.r.R;
 import afc.graphing.r.RPlotCI;
 import afc.utils.Arff;
 import afc.utils.FileSystem;
+import afc.utils.Arff.AFTERUSE;
 
 public class Section1Run {
 	/*
@@ -72,7 +73,7 @@ public class Section1Run {
 			String filename = FileSystem.getNameFromStringLocation(arffFile, false);
 			System.out.println(filename);
 			System.out.println("Reading " + arffFile + "...");
-			Instances originalInstances = Arff.getAsInstances(arffFile, false);
+			Instances originalInstances = Arff.getAsInstances(arffFile, AFTERUSE.DO_NOTHING);
 			System.out.println("Sample Size: " + originalInstances.numInstances());
 			for(int subsampleIndex = 0; subsampleIndex < numOfResample; subsampleIndex++){
 				Instances instances;
