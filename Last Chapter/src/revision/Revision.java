@@ -17,6 +17,7 @@ import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.instance.Resample;
 import afc.utils.Arff;
+import afc.utils.Arff.AFTERUSE;
 import afc.utils.FileSystem;
 
 public class Revision {
@@ -51,7 +52,7 @@ public class Revision {
 			String filename = FileSystem.getNameFromStringLocation(arffFile, false);
 			System.out.println(filename);
 			System.out.println("Reading " + arffFile + "...");
-			Instances originalInstances = Arff.getAsInstances(arffFile, false);
+			Instances originalInstances = Arff.getAsInstances(arffFile, AFTERUSE.DO_NOTHING);
 			System.out.println("Sample Size: " + originalInstances.numInstances());
 			for(int subsampleIndex = 0; subsampleIndex < numOfResample; subsampleIndex++){
 				Instances instances;
