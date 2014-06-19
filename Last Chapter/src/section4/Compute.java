@@ -10,7 +10,7 @@ import weka.core.Debug.Random;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.instance.Resample;
-import afc.commons.Utils;
+import afc.commons.AfcMath;
 import afc.mira.Algorithm.RuleStatus;
 import afc.mira.Mira;
 
@@ -123,18 +123,18 @@ public class Compute implements Callable<Results>{
 		System.out.println("OSMA Count: " + OSMACount);
 		System.out.println("OSMB Count: " + OSMBCount);
 		System.out.println("Avg Used by Mira: " + totalByMira);
-		System.out.println("OSMA Error: " + errorByOSMA + "(" + Utils.roundToDecimals(errorByOSMA * 100.0 / totalCompared, 2) + "%)");
-		System.out.println("OSMB Error: " + errorByOSMB + "(" + Utils.roundToDecimals(errorByOSMB * 100.0 / totalCompared, 2) + "%)");
-		System.out.println("OSMA Error @ 50: " + errorAt50ByOSMA + "(" + Utils.roundToDecimals(errorAt50ByOSMA * 100.0 / totalCompared, 2) + "%)");
-		System.out.println("OSMB Error @ 50: " + errorAt50ByOSMB + "(" + Utils.roundToDecimals(errorAt50ByOSMB * 100.0 / totalCompared, 2) + "%)");
+		System.out.println("OSMA Error: " + errorByOSMA + "(" + AfcMath.roundToDecimals(errorByOSMA * 100.0 / totalCompared, 2) + "%)");
+		System.out.println("OSMB Error: " + errorByOSMB + "(" + AfcMath.roundToDecimals(errorByOSMB * 100.0 / totalCompared, 2) + "%)");
+		System.out.println("OSMA Error @ 50: " + errorAt50ByOSMA + "(" + AfcMath.roundToDecimals(errorAt50ByOSMA * 100.0 / totalCompared, 2) + "%)");
+		System.out.println("OSMB Error @ 50: " + errorAt50ByOSMB + "(" + AfcMath.roundToDecimals(errorAt50ByOSMB * 100.0 / totalCompared, 2) + "%)");
 		System.out.println("Total OSMA Error: " + (errorByOSMA + errorAt50ByOSMA) + "(" + 
-				Utils.roundToDecimals((errorByOSMA + errorAt50ByOSMA) * 100.0 / totalCompared, 2) + "%)");
+				AfcMath.roundToDecimals((errorByOSMA + errorAt50ByOSMA) * 100.0 / totalCompared, 2) + "%)");
 		System.out.println("Total OSMB Error: " + (errorByOSMB + errorAt50ByOSMB) + "(" + 
-				Utils.roundToDecimals((errorByOSMB + errorAt50ByOSMB) * 100.0 / totalCompared, 2) + "%)");
+				AfcMath.roundToDecimals((errorByOSMB + errorAt50ByOSMB) * 100.0 / totalCompared, 2) + "%)");
 		System.out.println("Total Error (without 50): " + (errorByOSMA + errorByOSMB) + "(" + 
-				Utils.roundToDecimals((errorByOSMA + errorByOSMB) * 100.0 / totalCompared, 2) + "%)");
+				AfcMath.roundToDecimals((errorByOSMA + errorByOSMB) * 100.0 / totalCompared, 2) + "%)");
 		System.out.println("Total Error (with 50): " + (errorByOSMA + errorByOSMB + errorAt50ByOSMA + errorAt50ByOSMB) + "(" + 
-				Utils.roundToDecimals((errorByOSMA + errorByOSMB + errorAt50ByOSMA + errorAt50ByOSMB) * 100.0 / totalCompared, 2) + "%)");
+				AfcMath.roundToDecimals((errorByOSMA + errorByOSMB + errorAt50ByOSMA + errorAt50ByOSMB) * 100.0 / totalCompared, 2) + "%)");
 		System.out.println("=====================================");
 	}
 
